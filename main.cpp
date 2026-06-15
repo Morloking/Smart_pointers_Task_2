@@ -7,7 +7,7 @@ class node
 public:
     int m_value;
     std::shared_ptr<node> parent;
-    std::weak_ptr<node> weakParent; //добавил я
+    std::weak_ptr<node> weakParent; //РґРѕР±Р°РІРёР» СЏ
     node(int value) : m_value{ value } {};
     ~node() { std::cout << "destructor called\n"; }
 };
@@ -19,7 +19,7 @@ int main()
         auto node2 = std::make_shared<node>(2);
 
         node1->parent = node2;
-        node2->weakParent = node1;//изменил parent на weakParent
+        node2->weakParent = node1;//РёР·РјРµРЅРёР» parent РЅР° weakParent
     }
 
     return 0;
